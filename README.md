@@ -1,4 +1,4 @@
-# Group-Project-1
+# Pet Finder
 Team: Shane Dinh, Zee Virola, Farhan Abdullahi', Larry Sorto, Gabriel Wagner
 
 --User Story
