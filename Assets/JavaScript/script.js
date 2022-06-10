@@ -60,5 +60,15 @@ ul_3.addEventListener("click", function(event) {
 
     console.log(petChoices)
 localStorage.setItem("petChoices", JSON.stringify(petChoices))
+
+
 });
+
+fetch(url) 
+.then(function(response) {
+    return response.JSON();
+})
+.then (function (data) {
+console.log(data);
+})
 
