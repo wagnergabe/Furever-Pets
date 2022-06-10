@@ -1,11 +1,56 @@
-h1 {
-    color: blue;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-button {
-    justify-content: center;
+body {
+    text-align: center;
 }
 
-button:hover {
-    background-color: greenyellow;
+a {
+    text-decoration: none;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.quiz {
+    width: 80%;
+    height: 200px;
+    margin: 20px auto;
+    border: 3px black;
+}
+
+.quiz h2 {
+    margin: 8px;
+    padding-top: 10px;
+}
+
+.quiz li {
+    margin: 10px;
+}
+
+.quiz li:hover {
+background: orange;
+}
+
+/*-----Question Displays-----*/
+
+#questionOne {
+    display: block
+}
+
+#questionTwo {
+    display: none;
+}
+
+#questionThree {
+    display: none;
+}
+
+.results {
+    display: none;
 }
