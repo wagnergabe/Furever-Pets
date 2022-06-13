@@ -79,10 +79,13 @@ fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoic
 .then (function (data) {
 console.log(data);
 
+
+/*Pet Name */
 var petName = document.createElement('h2');
 petName.textContent = data.animals[0].name;
 finalResults.appendChild(petName);
 
+/*Pet Picture (if available) */
 var petProfilePic = document.createElement('img');  
 if(data.animals[0].primary_photo_cropped === null) {
     petProfilePic.src = "https://cdn-icons-png.flaticon.com/512/12/12638.png"
@@ -90,9 +93,18 @@ if(data.animals[0].primary_photo_cropped === null) {
 petProfilePic.src = data.animals[0].primary_photo_cropped.small};   
 finalResults.appendChild(petProfilePic);
 
+/*Pet description*/
+/*Note: Desciption is allowed so many characters*/
 var petDetails = document.createElement('p');
 petDetails.textContent = data.animals[0].description;
 finalResults.appendChild(petDetails);
+
+var petLink = document.createElement('a');
+var link = document.createTextNode("Adopt Me");
+petLink.appendChild(link);
+petLink.title = "Adopt Me";
+petLink.href = data.animals[0].url;
+finalResults.append(petLink);
 
 
 })
