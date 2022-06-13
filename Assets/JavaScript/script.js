@@ -55,6 +55,7 @@ ul_3.addEventListener("click", function(event) {
 
     response3 = event.target;
     finalResults.appendChild(response3);
+    console.log(response3)
     petChoices.push(response3.innerHTML);   
 
 //-----Save to localStorage-----//
@@ -66,9 +67,9 @@ localStorage.setItem("petChoices", JSON.stringify(petChoices))
 
 console.log(petChoices[0])
 
-fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}`, {
+fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoices[1]}&size=${petChoices[2]}`, {
     headers: {
-        Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlTXlqdnF5eVd6UTh0N2FEZzBTbzVYRGNXR0N2bXhzSjNxTTN0NlJVSGdidWsyYUNybiIsImp0aSI6ImI3YTZjOWVlODk1YzBiZjJjYjUwYmVhNGUzY2Q3ZTk0ZDU4NWUyZDRkZDk0OWUzMTI4MmRkNmFhMjM1ZjZiZTlmZDY4Y2ZkN2RkYWRhNGRmIiwiaWF0IjoxNjU1MDk4MTk1LCJuYmYiOjE2NTUwOTgxOTUsImV4cCI6MTY1NTEwMTc5NSwic3ViIjoiIiwic2NvcGVzIjpbXX0.BIEvq26L0r5_c7deJoe9BQOW5B2KLanIWqfmTlf0Xg9ssM580gSxyIj0elgZVNFzKY-1-f1jCEheWNSNVAsHMa_ZyOCm0ozF_OSddrlk_KRcYDkDCYJO2jXcltJ4ot0dN-SIQZUHlfNoSow6LXunATEjtGf-ARLrKGRhYp6SlMO5JfNRIqWel3PXrFv5q0ecKAk5g5bRT15QCGW8FuWdIYxbmGrP1s1PLwQUqtBygUvRbwzbsC7F53u06gC3I6TTJVYBwAZrUJBHl7-9JM4aNo5r3bqWyyqHNFuZJHGmPdgGm8IuM4DLgUicqdOZ_fkFIWDOYfYZDpbU6R7bX-noTw", 
+        Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlTXlqdnF5eVd6UTh0N2FEZzBTbzVYRGNXR0N2bXhzSjNxTTN0NlJVSGdidWsyYUNybiIsImp0aSI6ImI5MjYwNDk0NzQ5MDhiZGFkMzQzNmM2YWViNTk1MzA1M2Q1ZTYwY2ZmOWYwNmU4NjM3ODI1ZTg4YjhhOGI4MWQ3NWM0ZTRjNzZlMjZjZWJkIiwiaWF0IjoxNjU1MTAyMzEyLCJuYmYiOjE2NTUxMDIzMTIsImV4cCI6MTY1NTEwNTkxMiwic3ViIjoiIiwic2NvcGVzIjpbXX0.rGoK0EENTLEBCahcA_7b9_awPIQruNzqtArimyeuFFK2AhzPSO4TFFao5005LVhETtcesSL37xxZI-tZ1pcYm3jp7LXFIqKpyEszjJk2eUN8Rb8TJbw-wbqIrPLesCiRJXXsv8g9bNRSHZXQaobIoHIsg2ftFE18RR2jbBmdU90vO2lcRFZVAOIC4U1RvwBXUYjjeOTPHoNmkK0SZsoIVP0EJjxGnXZicZK5SzIihVWAGDt5x4MXp8-Ny9R9lOwaAN7QHPTB3yunFxyJMe7L3Nwwiuml3Tb7xGskN1iQMYTLmCnnMPDA8kAgRRmNO7AYAiqC-aEPhczh8iXZIquyAg",
     }
 })
 
@@ -77,6 +78,18 @@ fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}`, {
 })
 .then (function (data) {
 console.log(data);
+
+var petName = document.createElement('h2');
+petName.textContent = data.animals[0].name;
+finalResults.appendChild(petName);
+
+
+var petProfilePic = document.createElement('img');  
+petProfilePic.src = data.animals[0].primary_photo_cropped.small;   
+finalResults.appendChild(petProfilePic);
+
+
+
 })
 });
 
