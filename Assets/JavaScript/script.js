@@ -55,21 +55,18 @@ ul_3.addEventListener("click", function(event) {
 
     response3 = event.target;
     finalResults.appendChild(response3);
-    petChoices.push(response3.innerHTML);
-    
+    petChoices.push(response3.innerHTML);   
 
 //-----Save to localStorage-----//
 
-    console.log(petChoices)
+    // console.log(petChoices)
 localStorage.setItem("petChoices", JSON.stringify(petChoices))
-
-
-});
 
 //----API Call----///
 
+console.log(petChoices[0])
 
-fetch("https://api.petfinder.com/v2/animals", {
+fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}`, {
     headers: {
         Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlTXlqdnF5eVd6UTh0N2FEZzBTbzVYRGNXR0N2bXhzSjNxTTN0NlJVSGdidWsyYUNybiIsImp0aSI6ImI3YTZjOWVlODk1YzBiZjJjYjUwYmVhNGUzY2Q3ZTk0ZDU4NWUyZDRkZDk0OWUzMTI4MmRkNmFhMjM1ZjZiZTlmZDY4Y2ZkN2RkYWRhNGRmIiwiaWF0IjoxNjU1MDk4MTk1LCJuYmYiOjE2NTUwOTgxOTUsImV4cCI6MTY1NTEwMTc5NSwic3ViIjoiIiwic2NvcGVzIjpbXX0.BIEvq26L0r5_c7deJoe9BQOW5B2KLanIWqfmTlf0Xg9ssM580gSxyIj0elgZVNFzKY-1-f1jCEheWNSNVAsHMa_ZyOCm0ozF_OSddrlk_KRcYDkDCYJO2jXcltJ4ot0dN-SIQZUHlfNoSow6LXunATEjtGf-ARLrKGRhYp6SlMO5JfNRIqWel3PXrFv5q0ecKAk5g5bRT15QCGW8FuWdIYxbmGrP1s1PLwQUqtBygUvRbwzbsC7F53u06gC3I6TTJVYBwAZrUJBHl7-9JM4aNo5r3bqWyyqHNFuZJHGmPdgGm8IuM4DLgUicqdOZ_fkFIWDOYfYZDpbU6R7bX-noTw", 
     }
@@ -81,4 +78,5 @@ fetch("https://api.petfinder.com/v2/animals", {
 .then (function (data) {
 console.log(data);
 })
+});
 
