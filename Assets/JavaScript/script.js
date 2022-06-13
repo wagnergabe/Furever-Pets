@@ -1,6 +1,9 @@
-/*Variables*/
 
-var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlTXlqdnF5eVd6UTh0N2FEZzBTbzVYRGNXR0N2bXhzSjNxTTN0NlJVSGdidWsyYUNybiIsImp0aSI6IjA5ODAxYjcwMWE3ZmVhZTE2MTIyZjQxMWJiMjU1NTAyOWVmM2E5YjkyMmI1MWQ5ZDhlMjJhNDU0ZTU0OThiNmQ5ZDRlZDA0OTYzMDUxZjU3IiwiaWF0IjoxNjU1MTI5NDgzLCJuYmYiOjE2NTUxMjk0ODMsImV4cCI6MTY1NTEzMzA4Mywic3ViIjoiIiwic2NvcGVzIjpbXX0.UXRUwfHERxYzw-tmBdzhgTFbqh2k4QhRakGQ0LUNobaAvUEDAkcKGHnLar-Mw3VnvfLD8lfNm31KXtNBzNNjCnFvA5yR7quXGbE1gEB9BDzSbNoriijEEL29LXFVqUCEKOvWQTH3I0MpGqk0WpbLsoKzgxsTWlYD1QaFL1-2zOeVJ5EpYU8Quppn1PsPhgNSyffQjUQAguiKl7pWhVXAR4B_53_f6R-HiTmlBapxNsGrPqapDhyYX2Q6lopfKPr7Qd6bJvvoHBRf88eau_m5nzOn-3Be7LAW2uUohny477169qUgkJt-2pQVw3EJGpCMVX65y0x-G5xOxxrH6L1rBA"
+
+/*Variables*/
+var clientId = "eMyjvqyyWzQ8t7aDg0So5XDcWGCvmxsJ3qM3t6RUHgbuk2aCrn";
+var secret = "aWV5jwQBJnkFks98afBWwFAl1vrEUNtLtl7ekKRB";
+var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlTXlqdnF5eVd6UTh0N2FEZzBTbzVYRGNXR0N2bXhzSjNxTTN0NlJVSGdidWsyYUNybiIsImp0aSI6ImE5Njc5MTA1Yjk4NjU0M2RhOTQxYjY0MmQ2ZTA5YWRiNmRmMTAwZjMzOTEyNTlhNGE0NGZmZWQ1ZTlmMjlhZTgyZTJkOTAzNGRlZmYwNDNmIiwiaWF0IjoxNjU1MTMzNDQxLCJuYmYiOjE2NTUxMzM0NDEsImV4cCI6MTY1NTEzNzA0MSwic3ViIjoiIiwic2NvcGVzIjpbXX0.z03UHjOWAe1eCWdFS-TpqUXltXVnr_cAQmBOMleBhUQH6tbZlPDf54-WvfkTrGDeuM5hySAodZojDALlghHD8cOF7F9hNhtL1JmIDkNk4wo7-NxIt6ar66gCWZD9iqF0PfJjxKogkIE_k4t79jq6SWBF68B4yhDvjGxnQB_wT7cU0ZwPWMTt_4FSfNq7x8_nrVjR96hbV6tSdkbd4r0di_TujApuhmA3DRBG4CBBceFw7BGYRY7NcNwy2FlSkAMYuhuqmDGax0Jn6JqCmwYaTTKDMu00XX3S3A5SS7z0ns5Xg5mrUDQD20YGF_qT3djE-9Bwlqx6PUAiZP6GFXNuGg";
 var ul_1 = document.querySelector('.answer1');
 var ul_2 = document.querySelector('.answer2');
 var ul_3 = document.querySelector('.answer3');
@@ -15,6 +18,20 @@ var results = document.querySelector('.results');
 var finalResults = document.querySelector('.finalResults');
 var petChoices = [];
 
+   fetch("https://api.petfinder.com/v2/oauth2/token", {
+  body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`,
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  method: "POST" 
+   })
+   .then (function(response) {
+    return response.json();
+   })
+   .then(function (data) {
+    token = data.access_token;
+   })
+
 //----- First Question -----//
 
 ul_1.addEventListener("click", function(event) {
@@ -27,7 +44,7 @@ ul_1.addEventListener("click", function(event) {
     petChoices.push(response1.innerHTML)
     
     console.log(response1)
-});
+})
 
 
 
@@ -51,6 +68,7 @@ ul_3.addEventListener("click", function(event) {
     q3.style.display = "none"
     quiz.style.display = "none"
     results.style.display = "block"
+    event.preventDefault();
 
 
     response3 = event.target;
@@ -66,10 +84,9 @@ localStorage.setItem("petChoices", JSON.stringify(petChoices))
 //----API Call----///
 
 console.log(petChoices[0])
-
 fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoices[1]}&size=${petChoices[2]}`, {
     headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
     }
 })
 
@@ -77,7 +94,7 @@ fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoic
     return response.json();
 })
 .then (function (data) {
-console.log(data);
+
 
 
 /*Pet Name */
@@ -99,6 +116,7 @@ var petDetails = document.createElement('p');
 petDetails.textContent = data.animals[0].description;
 finalResults.appendChild(petDetails);
 
+/*Link to Pet's page */
 var petLink = document.createElement('a');
 var link = document.createTextNode("Adopt Me");
 petLink.appendChild(link);
@@ -109,4 +127,3 @@ finalResults.append(petLink);
 
 })
 });
-
