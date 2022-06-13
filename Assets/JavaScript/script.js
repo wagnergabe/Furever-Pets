@@ -1,6 +1,6 @@
 /*Variables*/
 
-var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlTXlqdnF5eVd6UTh0N2FEZzBTbzVYRGNXR0N2bXhzSjNxTTN0NlJVSGdidWsyYUNybiIsImp0aSI6IjhkNWI4YjUxMDA2MDI0MzYzZjg0YmY1MzQzOGFlYzc0NTAxYTI4NmI3MDlkMTllNDIzYWUwNmE1ZDc2ZDYwZjA2NjFhMmY2NWExZTU2YzY1IiwiaWF0IjoxNjU1MDkxMjYwLCJuYmYiOjE2NTUwOTEyNjAsImV4cCI6MTY1NTA5NDg2MCwic3ViIjoiIiwic2NvcGVzIjpbXX0.KxcYhLrfQdFqDWS48JkL7nAW0Pt9Q0EcbLzhDp108JwcXXTCwcgQnweV4LOjN81RCb89HCVh0JDFOJ8zNuVwIFXjjhx50Td9qyo6xnzJ1S0Y8iYUjyZmkseCuzX1F-gv2SqPwn1qwRvOqLWsfvM6GgmjCOXmCtYKR4hDQleoGGP3lZJEmHyyie_HfnX93AenIULOZzESBI7P1nAJ2dUcClhHmP-Lcx5tD-T8mx4dolM3UPmEWpWSGVh1M2xv1c7ty31y2z7xbz-8kZhOCdW_9K-Bx06H9tb4S5TrMM18VYkq7Zjuzb3XRbrx7rjApHchjkdgqX3Ct1UwzeXYKccq9g"
+var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlTXlqdnF5eVd6UTh0N2FEZzBTbzVYRGNXR0N2bXhzSjNxTTN0NlJVSGdidWsyYUNybiIsImp0aSI6IjA5ODAxYjcwMWE3ZmVhZTE2MTIyZjQxMWJiMjU1NTAyOWVmM2E5YjkyMmI1MWQ5ZDhlMjJhNDU0ZTU0OThiNmQ5ZDRlZDA0OTYzMDUxZjU3IiwiaWF0IjoxNjU1MTI5NDgzLCJuYmYiOjE2NTUxMjk0ODMsImV4cCI6MTY1NTEzMzA4Mywic3ViIjoiIiwic2NvcGVzIjpbXX0.UXRUwfHERxYzw-tmBdzhgTFbqh2k4QhRakGQ0LUNobaAvUEDAkcKGHnLar-Mw3VnvfLD8lfNm31KXtNBzNNjCnFvA5yR7quXGbE1gEB9BDzSbNoriijEEL29LXFVqUCEKOvWQTH3I0MpGqk0WpbLsoKzgxsTWlYD1QaFL1-2zOeVJ5EpYU8Quppn1PsPhgNSyffQjUQAguiKl7pWhVXAR4B_53_f6R-HiTmlBapxNsGrPqapDhyYX2Q6lopfKPr7Qd6bJvvoHBRf88eau_m5nzOn-3Be7LAW2uUohny477169qUgkJt-2pQVw3EJGpCMVX65y0x-G5xOxxrH6L1rBA"
 var ul_1 = document.querySelector('.answer1');
 var ul_2 = document.querySelector('.answer2');
 var ul_3 = document.querySelector('.answer3');
@@ -69,7 +69,7 @@ console.log(petChoices[0])
 
 fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoices[1]}&size=${petChoices[2]}`, {
     headers: {
-        Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlTXlqdnF5eVd6UTh0N2FEZzBTbzVYRGNXR0N2bXhzSjNxTTN0NlJVSGdidWsyYUNybiIsImp0aSI6ImI5MjYwNDk0NzQ5MDhiZGFkMzQzNmM2YWViNTk1MzA1M2Q1ZTYwY2ZmOWYwNmU4NjM3ODI1ZTg4YjhhOGI4MWQ3NWM0ZTRjNzZlMjZjZWJkIiwiaWF0IjoxNjU1MTAyMzEyLCJuYmYiOjE2NTUxMDIzMTIsImV4cCI6MTY1NTEwNTkxMiwic3ViIjoiIiwic2NvcGVzIjpbXX0.rGoK0EENTLEBCahcA_7b9_awPIQruNzqtArimyeuFFK2AhzPSO4TFFao5005LVhETtcesSL37xxZI-tZ1pcYm3jp7LXFIqKpyEszjJk2eUN8Rb8TJbw-wbqIrPLesCiRJXXsv8g9bNRSHZXQaobIoHIsg2ftFE18RR2jbBmdU90vO2lcRFZVAOIC4U1RvwBXUYjjeOTPHoNmkK0SZsoIVP0EJjxGnXZicZK5SzIihVWAGDt5x4MXp8-Ny9R9lOwaAN7QHPTB3yunFxyJMe7L3Nwwiuml3Tb7xGskN1iQMYTLmCnnMPDA8kAgRRmNO7AYAiqC-aEPhczh8iXZIquyAg",
+        Authorization: `Bearer ${token}`
     }
 })
 
@@ -83,11 +83,16 @@ var petName = document.createElement('h2');
 petName.textContent = data.animals[0].name;
 finalResults.appendChild(petName);
 
-
 var petProfilePic = document.createElement('img');  
-petProfilePic.src = data.animals[0].primary_photo_cropped.small;   
+if(data.animals[0].primary_photo_cropped === null) {
+    petProfilePic.src = "https://cdn-icons-png.flaticon.com/512/12/12638.png"
+} else {
+petProfilePic.src = data.animals[0].primary_photo_cropped.small};   
 finalResults.appendChild(petProfilePic);
 
+var petDetails = document.createElement('p');
+petDetails.textContent = data.animals[0].description;
+finalResults.appendChild(petDetails);
 
 
 })
