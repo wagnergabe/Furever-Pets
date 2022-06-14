@@ -38,6 +38,7 @@ var petChoices = [];
    })
 
 
+//---- Clear local storage when restarting quiz---//
 restart.addEventListener("click", function() {
     localStorage.clear();
 })
@@ -88,7 +89,6 @@ ul_4.addEventListener("click", function(event) {
     q4.style.display = "none"
     quiz.style.display = "none"
     results.style.display = "block"
-    event.preventDefault();
 
     response4 = event.target;
     finalResults.appendChild(response4);
