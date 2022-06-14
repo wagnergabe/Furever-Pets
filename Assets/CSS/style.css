@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,7 +39,7 @@ background: orange;
 
 /*-----Question Displays-----*/
 
-#questionOne {
+/*#questionOne {
     display: block
 }
 
@@ -57,4 +57,4 @@ background: orange;
 
 .results {
     display: none;
-}
+} */
