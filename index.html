@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href = "./Assets/CSS/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"> <!--Bootstrap-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Icons-->
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Icons-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
 </head>
-    <title>Group Project #1</title>
+<title>Group Project #1</title>
 </head>
 
 <body>
-    <header>
-        <h1><span>Class Project 1!</span></h1>
-        <div>
-            <ul>
-                <li><a>Link #1</a></li>
-                <li><a>Link #2</a></li>
-                <li><a>Link #3</a></li>
+    <header class="flex flex-wrap space-between">
+        <h1 class="block"><span>Class Project 1!</span></h1>
+        <div class="flex flex-wrap">
+            <div id="nav" class="block">
+            <ul class="flex flex-wrap space-between text-center">
+                <li class="inline-block"><a>Link #1</a></li>
+                <li class="inline-block"><a>Link #2</a></li>
+                <li class="inline-block"><a>Link #3</a></li>
             </ul>
+            </div>
         </div>
     </header>
     <section class="jumbotron">
@@ -27,7 +35,7 @@
         <div class="hero">
             <h2>Here's a Smaller Title</h2>
             <p>Use this to explain what we're doing here and how they can get in on it.</p>
-            <button id = "click">Click Me</button>
+            <button id="click">Click Me</button>
         </div>
     </section>
 
@@ -58,10 +66,10 @@
             </div>
         </div>
     </section>
-    
+
     <footer></footer>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src = "./Assets/JavaScript/script.js"></script>    
+    <script src="https://cdn.tailwindcss.com"></script>
 </body>
+
 </html>
