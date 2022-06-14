@@ -24,6 +24,7 @@ var results = document.querySelector('.results');
 var finalResults = document.querySelector('.finalResults');
 var petChoices = [];
 
+
 // /*Get New Token */
 // NOTE: Run app once with this, and then comment it out. Creates a token each time quiz is submitted. working on fixing it
    fetch("https://api.petfinder.com/v2/oauth2/token", {
@@ -40,6 +41,7 @@ var petChoices = [];
     token = data.access_token;
    })
 
+   
 
 //---- Clear local storage when restarting quiz---//
 restart.addEventListener("click", function() {
