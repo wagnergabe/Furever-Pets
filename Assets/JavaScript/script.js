@@ -1,6 +1,7 @@
 
 
 /*Variables*/
+
 var clientId = "eMyjvqyyWzQ8t7aDg0So5XDcWGCvmxsJ3qM3t6RUHgbuk2aCrn";
 var secret = "aWV5jwQBJnkFks98afBWwFAl1vrEUNtLtl7ekKRB";
 var token = "";
@@ -14,13 +15,13 @@ var q2 = document.querySelector('#questionTwo');
 var q3 = document.querySelector('#questionThree');
 var q4 = document.querySelector('#questionFour');
 
-
 var quiz = document.querySelector('.quiz');
 var results = document.querySelector('.results');
 var finalResults = document.querySelector('.finalResults');
 var petChoices = [];
 
-/*Get New Token */
+// /*Get New Token */
+// NOTE: Run app once with this, and then comment it out. Creates a token each time quiz is submitted. working on fixing it
    fetch("https://api.petfinder.com/v2/oauth2/token", {
   body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`,
   headers: {
@@ -63,9 +64,6 @@ ul_2.addEventListener("click", function(event) {
     finalResults.appendChild(response2);
     console.log(response2);
     petChoices.push(response2.innerHTML)
-    // finalResults.appendChild(response2);
-    
-
 
 });
 
@@ -130,6 +128,7 @@ finalResults.appendChild(petProfilePic);
 
 /*Pet description*/
 /*Note: Desciption is allowed so many characters*/
+/*Note: Webpage description div class = "u-vr4x", may be able to replace API description with website's*/
 var petDetails = document.createElement('p');
 petDetails.textContent = data.animals[0].description;
 finalResults.appendChild(petDetails);
