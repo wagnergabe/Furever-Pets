@@ -29,15 +29,15 @@
                 <div>Link 3</div>
             </div>
         </header>
-        <section class="jumbotron bg-accent-dark bg-cover">
+        <section class="jumbotron bg-accent-dark bg-cover" id = "mainPage">
             <!-- add the image via css or whatever we use -->
             <div class="hero grid grid-cols-2">
                 <div id="text" class="text-black text-center text-3xl p-4">
                 <h2>Here's a Smaller Title</h2>
                 <p>Use this to explain what we're doing here and how they can get in on it.</p>
                 </div>
-                <div id="button">
-                <button id="click" class="rounded-full text-lg">Click Me</button>
+                <div id="Startquiz">
+                <button id="startQuiz" class="rounded-full text-lg">Begin</button>
                 </div>
             </div>
         </section>
@@ -72,6 +72,53 @@
                 </div>
             </div>
         </section>
+
+        <div class = "quiz">
+            <div id = "questionOne">
+                <h2>What pet are you hoping to adopt?</h2>
+                    <ul class = "answer1">
+                        <li>Dog</li>
+                        <li>Cat</li>
+                    </ul>
+            </div>
+        
+            <div id = "questionTwo">
+                <h2>How Old?</h2>
+                    <ul class = "answer2">
+                        <li>Baby</li>
+                        <li>Young</li>
+                        <li>Adult</li>
+                        <li>Senior</li>
+                    </ul>
+            </div>
+        
+            <div id = "questionThree">
+                <h2>What size</h2>
+                    <ul class = "answer3">
+                        <li>Small</li>
+                        <li>Medium</li>
+                        <li>Large</li>
+                        <li>xlarge</li>
+                    </ul>
+            </div>
+    
+            <div id = "questionFour">
+                <h2>Gender</h2>
+                    <ul class = "answer4">
+                        <li>Male</li>
+                        <li>Female</li>
+                    </ul>
+            </div>
+        </div>
+    
+        <div class = "results">
+            <h2>Your Choices:</h2>
+                <p>Your Pet:</p>
+                    <div class = "finalResults"></div>
+            
+            <a id ="reset" href="index.html">Return to Main Page</a>
+       
+        </div>
 
 
         <footer></footer>
