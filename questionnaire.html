@@ -11,46 +11,59 @@
 <body>
     <!--Google Maps-->
 
-    <div class="quiz">
-        <div id="questionOne">
+    <header>
+        <h1>Pet Finder</h1>
+    </header>
+
+    <!--Google Maps-->
+
+    <div class = "quiz">
+        <div id = "questionOne">
             <h2>What pet are you hoping to adopt?</h2>
-            <ul class="answer1">
-                <li>Dog</li>
-                <li>Cat</li>
-            </ul>
+                <ul class = "answer1">
+                    <li>Dog</li>
+                    <li>Cat</li>
+                </ul>
         </div>
-
-        <div id="questionTwo">
+    
+        <div id = "questionTwo">
             <h2>How Old?</h2>
-            <ul class="answer2">
-                <li>Baby</li>
-                <li>Young</li>
-                <li>Adult</li>
-                <li>Senior</li>
-            </ul>
+                <ul class = "answer2">
+                    <li>Baby</li>
+                    <li>Young</li>
+                    <li>Adult</li>
+                    <li>Senior</li>
+                </ul>
         </div>
-
-        <div id="questionThree">
+    
+        <div id = "questionThree">
             <h2>What size</h2>
-            <ul class="answer3">
-                <li>Small</li>
-                <li>Medium</li>
-                <li>Large</li>
-                <li>xlarge</li>
-            </ul>
+                <ul class = "answer3">
+                    <li>Small</li>
+                    <li>Medium</li>
+                    <li>Large</li>
+                    <li>xlarge</li>
+                </ul>
         </div>
 
-        <div id="questionFour">
+        <div id = "questionFour">
             <h2>Gender</h2>
-            <ul class="answer4">
-                <li>Male</li>
-                <li>Female</li>
-            </ul>
+                <ul class = "answer4">
+                    <li>Male</li>
+                    <li>Female</li>
+                </ul>
         </div>
     </div>
 
-    <script async
-        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDFqy1yGHKCyN3PStJkhSkfiqQkuwwQdrI&callback=initGoogle"></script>
+    <div class = "results">
+        <h2>Your Choices:</h2>
+            <p>Your Pet:</p>
+                <div class = "finalResults"></div>
+        
+        <a id ="reset" href="index.html">Take again</a>
+   
+    </div>
+   
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!--JQuery-->
