@@ -1,4 +1,4 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,6 +15,17 @@ a {
 li {
     text-decoration: none;
     list-style: none;
+}
+
+.jumbotron {
+    background-image: url(../images/stock\ photo.jpg);
+    background-size:0%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-position: center 50%;
+
 }
 
 .quiz {
@@ -39,7 +50,7 @@ background: orange;
 
 /*-----Question Displays-----*/
 
-/*#questionOne {
+#questionOne {
     display: block
 }
 
@@ -57,4 +68,4 @@ background: orange;
 
 .results {
     display: none;
-} */
+} 
