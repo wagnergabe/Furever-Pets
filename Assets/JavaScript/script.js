@@ -2,6 +2,9 @@
 
 /*Variables*/
 
+var startQuiz = document.querySelector('#startQuiz');
+var mainPage = document.querySelector('#mainPage');
+
 var clientId = "eMyjvqyyWzQ8t7aDg0So5XDcWGCvmxsJ3qM3t6RUHgbuk2aCrn";
 var secret = "aWV5jwQBJnkFks98afBWwFAl1vrEUNtLtl7ekKRB";
 var token = "";
@@ -15,10 +18,12 @@ var q2 = document.querySelector('#questionTwo');
 var q3 = document.querySelector('#questionThree');
 var q4 = document.querySelector('#questionFour');
 
+var restart = document.querySelector('#reset')
 var quiz = document.querySelector('.quiz');
 var results = document.querySelector('.results');
 var finalResults = document.querySelector('.finalResults');
 var petChoices = [];
+
 
 // /*Get New Token */
 // NOTE: Run app once with this, and then comment it out. Creates a token each time quiz is submitted. working on fixing it
@@ -36,7 +41,19 @@ var petChoices = [];
     token = data.access_token;
    })
 
+   
 
+//---- Clear local storage when restarting quiz---//
+restart.addEventListener("click", function() {
+    localStorage.clear();
+})
+
+//----- Start Quiz -----//
+startQuiz.addEventListener("click", function(event) {
+
+    mainPage.style.display = "none";
+    q1.style.display = "block";
+})
 
 
 //----- First Question -----//
@@ -84,7 +101,6 @@ ul_4.addEventListener("click", function(event) {
     q4.style.display = "none"
     quiz.style.display = "none"
     results.style.display = "block"
-    event.preventDefault();
 
     response4 = event.target;
     finalResults.appendChild(response4);

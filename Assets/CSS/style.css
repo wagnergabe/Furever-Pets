@@ -8,6 +8,10 @@ body {
     text-align: center;
 }
 
+#mainPage {
+    display: block;
+}
+
 a {
     text-decoration: none;
 }
@@ -50,8 +54,10 @@ background: orange;
 
 /*-----Question Displays-----*/
 
+
+
 #questionOne {
-    display: block
+    display: none;
 }
 
 #questionTwo {
