@@ -15,6 +15,7 @@ var q2 = document.querySelector('#questionTwo');
 var q3 = document.querySelector('#questionThree');
 var q4 = document.querySelector('#questionFour');
 
+var restart = document.querySelector('#reset')
 var quiz = document.querySelector('.quiz');
 var results = document.querySelector('.results');
 var finalResults = document.querySelector('.finalResults');
@@ -37,6 +38,9 @@ var petChoices = [];
    })
 
 
+restart.addEventListener("click", function() {
+    localStorage.clear();
+})
 
 
 //----- First Question -----//
