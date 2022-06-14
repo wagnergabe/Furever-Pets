@@ -12,69 +12,74 @@
     <!--Icons-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
 </head>
 <title>Group Project #1</title>
 </head>
 
 <body>
-    <header class="flex flex-wrap space-between">
-        <h1 class="block"><span>Class Project 1!</span></h1>
-        <div class="flex flex-wrap">
-            <div id="nav" class="block">
-            <ul class="flex flex-wrap space-between text-center">
-                <li class="inline-block"><a>Link #1</a></li>
-                <li class="inline-block"><a>Link #2</a></li>
-                <li class="inline-block"><a>Link #3</a></li>
-            </ul>
+    <div class="container mx-auto">
+        <header>
+            <div class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded">
+            <h1 class="text-white text-center text-5xl p-4 shadow-xl">Class Project 1</h1>
             </div>
-        </div>
-    </header>
-    <section class="jumbotron">
-        <!-- add the image via css or whatever we use -->
-        <div class="hero">
-            <h2>Here's a Smaller Title</h2>
-            <p>Use this to explain what we're doing here and how they can get in on it.</p>
-            <button id="click">Click Me</button>
-        </div>
-    </section>
-
-
-    <section class="featured-pets">
-        <h2 class="featured">Feature Pets</h2>
-
-        <div class="card">
-            <img src="" alt="">
-            <div class="container">
-                <h4>Name</h4>
-                <p>Breed</p>
+            <div id="nav" class="bg-amber-200 grid grid-cols-3 text-lg text-center">
+                <div>Link 1</div>
+                <div>Link 2</div>
+                <div>Link 3</div>
             </div>
-        </div>
-
-        <div class="card">
-            <img src="" alt="">
-            <div class="container">
-                <h4>Name</h4>
-                <p>Breed</p>
+        </header>
+        <section class="jumbotron bg-accent-dark bg-cover">
+            <!-- add the image via css or whatever we use -->
+            <div class="hero grid grid-cols-2">
+                <div id="text" class="text-black text-center text-3xl p-4">
+                <h2>Here's a Smaller Title</h2>
+                <p>Use this to explain what we're doing here and how they can get in on it.</p>
+                </div>
+                <div id="button">
+                <button id="click" class="rounded-full text-lg">Click Me</button>
+                </div>
             </div>
+        </section>
 
-    
 
-        <div class="card">
-            <img src="" alt="">
-            <div class="container">
-                <h4>Name</h4>
-                <p>Breed</p>
+        <section class="featured-pets">
+            <h2 class="featured">Feature Pets</h2>
+
+            <div container="card holder" class="grid grid-cols-3">
+                <div class="card">
+                    <img src="" alt="">
+                    <div class="container">
+                        <h4>Name</h4>
+                        <p>Breed</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="" alt="">
+                    <div class="container">
+                        <h4>Name</h4>
+                        <p>Breed</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="" alt="">
+                    <div class="container">
+                        <h4>Name</h4>
+                        <p>Breed</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <footer></footer>
-
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--JQuery-->
-<script src = "./Assets/JavaScript/script.js"></script>    
+        <footer></footer>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--JQuery-->
+    <script src="./Assets/JavaScript/script.js"></script>
 
 </body>
 
