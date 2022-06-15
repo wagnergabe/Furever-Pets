@@ -54,6 +54,7 @@ startQuiz.addEventListener("click", function(event) {
 
     mainPage.style.display = "none";
     q1.style.display = "block";
+    petChoices.clear();
 })
 
 
