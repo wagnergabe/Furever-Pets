@@ -50,11 +50,11 @@ restart.addEventListener("click", function() {
 })
 
 //----- Start Quiz -----//
-startQuiz.addEventListener("click", function(event) {
-
+startQuiz.addEventListener("click", function() {
+    localStorage.clear();
     mainPage.style.display = "none";
     q1.style.display = "block";
-    petChoices.clear();
+   
 })
 
 
