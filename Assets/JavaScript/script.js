@@ -28,17 +28,17 @@ var petChoices = [];
 // /*Get New Token */
 // NOTE: Run app once with this, and then comment it out. Creates a token each time quiz is submitted. working on fixing it
    fetch("https://api.petfinder.com/v2/oauth2/token", {
-  body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`,
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded"
-  },
-  method: "POST" 
+        body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        method: "POST" 
    })
-   .then (function(response) {
-    return response.json();
-   })
-   .then(function (data) {
-    token = data.access_token;
+        .then (function(response) {
+        return response.json();
+     })
+        .then(function (data) {
+            token = data.access_token;
    })
 
    
@@ -50,11 +50,11 @@ restart.addEventListener("click", function() {
 })
 
 //----- Start Quiz -----//
-startQuiz.addEventListener("click", function(event) {
-
+startQuiz.addEventListener("click", function () {
+    localStorage.clear();
     mainPage.style.display = "none";
     q1.style.display = "block";
-    petChoices.clear();
+   
 })
 
 
@@ -83,6 +83,7 @@ ul_2.addEventListener("click", function(event) {
     finalResults.appendChild(response2);
     console.log(response2);
     petChoices.push(response2.innerHTML)
+    
 
 });
 
