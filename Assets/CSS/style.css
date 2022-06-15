@@ -44,12 +44,15 @@ li {
 
 }
 
+
+
 .quiz {
     width: 80%;
     height: 200px;
     margin: 20px auto;
     border: 3px black;
 }
+
 
 .quiz h2 {
     margin: 8px;
