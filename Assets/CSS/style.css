@@ -59,6 +59,23 @@ li {
     padding-top: 10px;
 }
 
+.answer1 li {
+    list-style-image: url('../Images/paw-solid.svg');
+    font-size: 30px;
+}
+.answer2 li {
+    list-style-image: url('../Images/paw-solid.svg');
+    font-size: 30px;
+}
+.answer3 li {
+    list-style-image: url('../Images/paw-solid.svg');
+    font-size: 30px;
+}
+.answer4 li {
+    list-style-image: url('../Images/paw-solid.svg');
+    font-size: 30px;
+}
+
 .quiz li {
     margin: 10px;
 }
