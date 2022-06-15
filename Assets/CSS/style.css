@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+img {
+    width: 25px;
+    height: 25px;
+}
+
 body {
     text-align: center;
 }
