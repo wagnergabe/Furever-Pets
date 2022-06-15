@@ -1,5 +1,3 @@
-
-
 /*Variables*/
 
 var startQuiz = document.querySelector('#startQuiz');
@@ -27,21 +25,21 @@ var petChoices = [];
 
 // /*Get New Token */
 // NOTE: Run app once with this, and then comment it out. Creates a token each time quiz is submitted. working on fixing it
-   fetch("https://api.petfinder.com/v2/oauth2/token", {
-  body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`,
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded"
-  },
-  method: "POST" 
-   })
-   .then (function(response) {
-    return response.json();
-   })
-   .then(function (data) {
-    token = data.access_token;
-   })
+fetch("https://api.petfinder.com/v2/oauth2/token", {
+    body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${secret}`,
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    method: "POST"
+})
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        token = data.access_token;
+    })
 
-   
+
 
 //---- Clear local storage when restarting quiz---//
 restart.addEventListener("click", function() {
@@ -51,7 +49,7 @@ restart.addEventListener("click", function() {
 })
 
 //----- Start Quiz -----//
-startQuiz.addEventListener("click", function(event) {
+startQuiz.addEventListener("click", function (event) {
 
     mainPage.style.display = "none";
     q1.style.display = "block";
@@ -61,22 +59,22 @@ startQuiz.addEventListener("click", function(event) {
 
 //----- First Question -----//
 
-ul_1.addEventListener("click", function(event) {
-   
+ul_1.addEventListener("click", function (event) {
+
     q1.style.display = "none";
     q2.style.display = "block";
-    
+
     var response1 = event.target;
     finalResults.appendChild(response1);
     petChoices.push(response1.innerHTML)
-    
+
     console.log(response1)
 })
 
 
 
 //-----Second Question-----//
-ul_2.addEventListener("click", function(event) {
+ul_2.addEventListener("click", function (event) {
     q2.style.display = "none";
     q3.style.display = "block";
 
@@ -88,19 +86,19 @@ ul_2.addEventListener("click", function(event) {
 });
 
 //-----Third Question-----//
-ul_3.addEventListener("click", function(event) {
+ul_3.addEventListener("click", function (event) {
     q3.style.display = "none";
     q4.style.display = "block";
-  
+
 
     response3 = event.target;
     finalResults.appendChild(response3);
     console.log(response3)
-    petChoices.push(response3.innerHTML);   
+    petChoices.push(response3.innerHTML);
 
 });
 
-ul_4.addEventListener("click", function(event) {
+ul_4.addEventListener("click", function (event) {
     q4.style.display = "none"
     quiz.style.display = "none"
     results.style.display = "block"
@@ -112,52 +110,53 @@ ul_4.addEventListener("click", function(event) {
 
 
 
-//-----Save to localStorage-----//
+    //-----Save to localStorage-----//
 
-localStorage.setItem("petChoices", JSON.stringify(petChoices))
+    localStorage.setItem("petChoices", JSON.stringify(petChoices))
 
-//----API Call----///
+    //----API Call----///
 
-console.log(petChoices)
-fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoices[1]}&size=${petChoices[2]}&gender=${petChoices[3]}`, {
-    headers: {
-        Authorization: `Bearer ${token}`,
-    }
-})
+    console.log(petChoices)
+    fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoices[1]}&size=${petChoices[2]}&gender=${petChoices[3]}`, {
+        headers: {
+            Authorization: `Bearer ${token}`,
+        }
+    })
 
-.then(function(response) {
-    return response.json();
-})
-.then (function (data) {
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
 
 
 
-/*Pet Name */
-var petName = document.createElement('h2');
-petName.textContent = data.animals[0].name;
-finalResults.appendChild(petName);
+            /*Pet Name */
+            var petName = document.createElement('h2');
+            petName.textContent = data.animals[0].name;
+            finalResults.appendChild(petName);
 
-/*Pet Picture (if available) */
-var petProfilePic = document.createElement('img');  
-if(data.animals[0].primary_photo_cropped === null) {
-    petProfilePic.src = "https://cdn-icons-png.flaticon.com/512/12/12638.png"
-} else {
-petProfilePic.src = data.animals[0].primary_photo_cropped.small};   
-finalResults.appendChild(petProfilePic);
+            /*Pet Picture (if available) */
+            var petProfilePic = document.createElement('img');
+            if (data.animals[0].primary_photo_cropped === null) {
+                petProfilePic.src = "https://cdn-icons-png.flaticon.com/512/12/12638.png"
+            } else {
+                petProfilePic.src = data.animals[0].primary_photo_cropped.small
+            };
+            finalResults.appendChild(petProfilePic);
 
-/*Pet description*/
-/*Note: Desciption is allowed so many characters*/
-/*Note: Webpage description div class = "u-vr4x", may be able to replace API description with website's*/
-var petDetails = document.createElement('p');
-petDetails.textContent = data.animals[0].description;
-finalResults.appendChild(petDetails);
+            /*Pet description*/
+            /*Note: Desciption is allowed so many characters*/
+            /*Note: Webpage description div class = "u-vr4x", may be able to replace API description with website's*/
+            var petDetails = document.createElement('p');
+            petDetails.textContent = data.animals[0].description;
+            finalResults.appendChild(petDetails);
 
-/*Link to Pet's page */
-var petLink = document.createElement('a');
-var link = document.createTextNode("Adopt Me");
-petLink.appendChild(link);
-petLink.title = "Adopt Me";
-petLink.href = data.animals[0].url;
-finalResults.append(petLink);
-});
+            /*Link to Pet's page */
+            var petLink = document.createElement('a');
+            var link = document.createTextNode("Adopt Me");
+            petLink.appendChild(link);
+            petLink.title = "Adopt Me";
+            petLink.href = data.animals[0].url;
+            finalResults.append(petLink);
+        });
 });

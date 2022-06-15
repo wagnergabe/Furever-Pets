@@ -18,17 +18,22 @@
 <body>
     <div class="container mx-auto">
         <header>
-            <button id="reset" class="block w-100"><div class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded">
-                <h1 class="text-white text-center text-5xl p-4 shadow-xl hover:bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600">Fur-Ever Pet Adoptions</h1>
-            </div></button>
+            <button id="reset" class="block w-100">
+                <div class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded">
+                    <h1
+                        class="text-white text-center text-5xl p-4 shadow-xl hover:bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600">
+                        Fur-Ever Pet Adoptions</h1>
+                </div>
+            </button>
+
             <div id="nav" class="text-white rounded bg-amber-500 grid grid-cols-3 text-lg text-center shadow-xl">
                 <div class="hover:bg-amber-400">Link 1</div>
                 <div class="hover:bg-amber-400">Link 2</div>
                 <div class="hover:bg-amber-400">Link 3</div>
             </div>
         </header>
+
         <section class="jumbotron bg-accent-dark bg-cover border-1 shadow-xl" id="mainPage">
-            <!-- add the image via css or whatever we use -->
             <div class="hero grid grid-cols-2">
                 <div id="text" class="text-black text-center p-4">
                     <h2 class="text-3xl font-medium border-b border-amber-500">Looking for a new furry friend?</h2>
@@ -38,43 +43,53 @@
                         For Quiz</button>
 
                 </div>
+            </div>
+            <div class="hero grid grid-cols-2">
+                <div id="text" class="text-black text-center p-4">
+                    <p class="text-xl">We've got the solution! Take a quick, easy quiz and get matched to a
+                        pet tailored to your answers. All pets are up for adoption, ready to be rehomed into your loving
+                        arms.
+                        Click the button above, answer just a few questions, and check out your results. If, for some
+                        reason,
+                        you don't like your match? Simply take the quiz again and check out the next match!</p>
+                </div>
         </section>
 
-        <section class="quiz flex items-center space-between">
+        <section class="quiz">
 
             <div id="questionOne">
                 <h2 class="text-2xl"><Strong>What Pet Are You Hoping To Adopt?</Strong></h2>
                 <ul class="answer1 text-lg">
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block"> Dog </li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block"> Cat </li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5"> Dog </li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5"> Cat </li>
                 </ul>
             </div>
 
             <div id="questionTwo">
                 <h2 class="text-2xl"><Strong>How Old?</Strong></h2>
                 <ul class="answer2 text-lg">
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Baby</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Young</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Adult</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Senior</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Baby</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Young</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Adult</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Senior</li>
                 </ul>
             </div>
 
             <div id="questionThree">
                 <h2 class="text-2xl"><strong>What Size?</strong></h2>
                 <ul class="answer3 text-lg">
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Small</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Medium</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Large</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Extra Large</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Small</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Medium</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Large</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Extra Large</li>
                 </ul>
             </div>
 
             <div id="questionFour">
                 <h2 class="text-2xl"><strong>What Gender?</strong></h2>
                 <ul class="answer4 text-lg">
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Male</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block">Female</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Male</li>
+                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Female</li>
                 </ul>
             </div>
     </div>
@@ -82,16 +97,25 @@
     <div class="results">
         <h2>Your Choices:</h2>
         <p>Your Pet:</p>
+
         <div class="finalResults"></div>
 
-        <button id="reset" class="mt-8 rounded-full text-lg bg-amber-200 hover:bg-amber-500 hover:text-white px-2 py-1">Start Over</button>
+        <button id="reset"
+            class="mt-8 rounded-full text-lg bg-amber-200 hover:bg-amber-500 hover:text-white px-2 py-1">Start
+            Over</button>
 
 
         </section>
 
-
-        <footer></footer>
     </div>
+
+    <footer>
+        <div class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded">
+            <h4 class="text-white text-sm p-4 shadow-xl">
+                Fur-Ever Pet Adoptions &copy; Group 1: Shane Dinh, Zee Virola, Farhan Abdullahi', Larry Sorto,
+                Gabriel Wagner 2022</h4>
+        </div>
+    </footer>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!--JQuery-->
