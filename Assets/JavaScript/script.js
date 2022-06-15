@@ -46,6 +46,7 @@ var petChoices = [];
 //---- Clear local storage when restarting quiz---//
 restart.addEventListener("click", function() {
     localStorage.clear();
+    petChoices.clear();
 })
 
 //----- Start Quiz -----//
@@ -53,6 +54,7 @@ startQuiz.addEventListener("click", function(event) {
 
     mainPage.style.display = "none";
     q1.style.display = "block";
+    petChoices.clear();
 })
 
 
