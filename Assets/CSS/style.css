@@ -12,6 +12,18 @@ body {
     display: block;
 }
 
+#FureverTitle {
+    font-family: "Fredoka One";
+}
+
+#footer-text {
+    font-family: "Fredoka One";
+}
+
+dog-logo path {
+    fill: #fff;
+}
+
 a {
     text-decoration: none;
 }
@@ -22,7 +34,7 @@ li {
 }
 
 .jumbotron {
-    background-image: url(../images/stock\ photo.jpg);
+    background-image: url(./images/dog-and-cat-cover.jpeg);
     background-size:0%;
     display: flex;
     justify-content: center;
