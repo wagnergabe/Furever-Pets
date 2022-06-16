@@ -28,6 +28,8 @@ var dogPic = document.querySelector('#randomDog');
 var catPic = document.querySelector('#randomCat');
 
 
+
+
 // /*Get New Token */
 // NOTE: Run app once with this, and then comment it out. Creates a token each time quiz is submitted. working on fixing it
    fetch("https://api.petfinder.com/v2/oauth2/token", {
@@ -158,7 +160,7 @@ localStorage.setItem("petChoices", JSON.stringify(petChoices))
 //----API Call----///
 
 console.log(petChoices)
-fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoices[1]}&size=${petChoices[2]}&gender=${petChoices[3]}`, {
+fetch(`https://api.petfinder.com/v2/animals?`, {
     headers: {
         Authorization: `Bearer ${token}`,
     }
@@ -168,7 +170,7 @@ fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoic
     return response.json();
 })
 .then (function (data) {
-
+console.log(data)
 
 
 /*Pet Name */
