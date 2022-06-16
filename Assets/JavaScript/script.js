@@ -18,10 +18,10 @@ var q2 = document.querySelector('#questionTwo');
 var q3 = document.querySelector('#questionThree');
 var q4 = document.querySelector('#questionFour');
 
-var restart = document.querySelector('#reset')
+// var restart = document.querySelector('#reset')
 var quiz = document.querySelector('.quiz');
-var results = document.querySelector('.results');
-var finalResults = document.querySelector('.finalResults');
+var results = document.querySelector('#results');
+var finalResults = document.querySelector('#finalResults');
 var petChoices = [];
 
 var dogPic = document.querySelector('#randomDog');
@@ -77,10 +77,10 @@ catPic.appendChild(randomCatPic);
 });
 
 //---- Clear local storage when restarting quiz---//
-restart.addEventListener("click", function() {
-    localStorage.clear();
-    petChoices.clear();
-})
+// restart.addEventListener("click", function() {
+//     localStorage.clear();
+//     petChoices.clear();
+// })
 
 //----- Start Quiz -----//
 startQuiz.addEventListener("click", function () {
@@ -101,7 +101,7 @@ ul_1.addEventListener("click", function(event) {
     q2.style.display = "block";
     
     var response1 = event.target;
-    finalResults.appendChild(response1);
+    // finalResults.appendChild(response1);
     petChoices.push(response1.innerHTML)
     
     console.log(response1)
@@ -115,7 +115,7 @@ ul_2.addEventListener("click", function(event) {
     q3.style.display = "block";
 
     var response2 = event.target;
-    finalResults.appendChild(response2);
+    // finalResults.appendChild(response2);
     console.log(response2);
     petChoices.push(response2.innerHTML)
     
@@ -129,7 +129,7 @@ ul_3.addEventListener("click", function(event) {
   
 
     response3 = event.target;
-    finalResults.appendChild(response3);
+    // finalResults.appendChild(response3);
     console.log(response3)
     petChoices.push(response3.innerHTML);   
 
@@ -138,10 +138,10 @@ ul_3.addEventListener("click", function(event) {
 ul_4.addEventListener("click", function(event) {
     q4.style.display = "none"
     quiz.style.display = "none"
-    results.style.display = "block"
+    results.style.display = "block";
 
     response4 = event.target;
-    finalResults.appendChild(response4);
+    // finalResults.appendChild(response4);
     console.log(response4);
     petChoices.push(response4.innerHTML);
 
@@ -170,10 +170,14 @@ fetch(`https://api.petfinder.com/v2/animals?type=${petChoices[0]}&age=${petChoic
 /*Pet Name */
 var petName = document.createElement('h2');
 petName.textContent = data.animals[0].name;
+petName.setAttribute('class', 'text-4xl text-center mt-3');
+petName.setAttribute('id', 'petName');
 finalResults.appendChild(petName);
 
 /*Pet Picture (if available) */
 var petProfilePic = document.createElement('img');  
+petProfilePic.setAttribute('class', 'flex justify-center');
+petProfilePic.setAttribute('id', 'pfp');
 if(data.animals[0].primary_photo_cropped === null) {
     petProfilePic.src = "https://cdn-icons-png.flaticon.com/512/12/12638.png"
 } else {
@@ -183,14 +187,29 @@ finalResults.appendChild(petProfilePic);
 /*Pet description*/
 var petDetails = document.createElement('p');
 petDetails.textContent = data.animals[0].description;
+petDetails.setAttribute = ('class', 'mt-3')
 finalResults.appendChild(petDetails);
 
 /*Link to Pet's page */
 var petLink = document.createElement('a');
-var link = document.createTextNode("Adopt Me");
+var link = document.createTextNode("Adopt Me! Click For More Information!");
 petLink.appendChild(link);
-petLink.title = "Adopt Me";
+petLink.setAttribute("class", "mt-2 bg-amber-500 text-white px-2 py-1 rounded text-center hover:ring hover:ring-amber-400 hover:animate-bounce")
+petLink.setAttribute("id", "adoptMe-button");
+petLink.title = "Adopt Me!";
 petLink.href = data.animals[0].url;
 finalResults.append(petLink);
+
+var restart = document.createElement('a');
+var resetLink = document.createTextNode('Start Over');
+restart.appendChild(resetLink);
+restart.addEventListener("click", function() {
+    localStorage.clear();
+    petChoices.clear();
+})
+restart.setAttribute("class", "w-1/6 text-center mt-2 bg-amber-500 text-white px-2 py-1 rounded mb-3")
+restart.setAttribute("id", "restart");
+restart.href = "index.html"
+finalResults.append(restart);
 });
 });

@@ -12,7 +12,7 @@ body {
     display: block;
 }
 
-#FureverTitle {
+#FureverTitle, #petName, #adoptMe-button {
     font-family: "Fredoka One";
 }
 
@@ -24,9 +24,6 @@ dog-logo path {
     fill: #fff;
 }
 
-a {
-    text-decoration: none;
-}
 
 li {
     text-decoration: none;
@@ -34,13 +31,13 @@ li {
 }
 
 .jumbotron {
-
+    background-image: url(../images/stock-photo.jpg);
     background-size:0%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
-    background-position: center 50%;
+    background-position: center 45%;
 
 }
 
@@ -61,28 +58,21 @@ li {
 
 .answer1 li {
     list-style-image: url('../Images/paw-solid.svg');
-    font-size: 30px;
 }
 .answer2 li {
     list-style-image: url('../Images/paw-solid.svg');
-    font-size: 30px;
 }
 .answer3 li {
     list-style-image: url('../Images/paw-solid.svg');
-    font-size: 30px;
 }
 .answer4 li {
     list-style-image: url('../Images/paw-solid.svg');
-    font-size: 30px;
 }
 
 .quiz li {
     margin: 10px;
 }
 
-.quiz li:hover {
-background: orange;
-}
 
 /*-----Question Displays-----*/
 
@@ -107,3 +97,29 @@ background: orange;
 .results {
     display: none;
 } 
+
+#adoptMe-button {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#pfp {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;  
+}
+
+#restart {
+    width: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
