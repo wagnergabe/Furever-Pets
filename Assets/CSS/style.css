@@ -98,6 +98,10 @@ li {
     display: none;
 } 
 
+#finalResults {
+    text-align: center;
+}
+
 #adoptMe-button {
     width: 50%;
     display: block;
@@ -115,14 +119,20 @@ li {
     margin-bottom: 3px;  
 }
 
-#finalResults {
+#infoText {
     text-align: center;
+    border: 3px solid green;
 }
 
+
 #randomPic {
-    display: block;
+    position: relative;
+    display: inline-block;
     margin: 3px auto;
     border: solid 7px orange;
+    height: 200px;
+    width: 300px;
+    align-items: center;
 }
 
 #restart {
