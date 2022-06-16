@@ -55,6 +55,8 @@ fetch ('https://dog.ceo/api/breeds/image/random')
     console.log(data)
 
 var randomDogPic = document.createElement('img');
+randomDogPic.setAttribute('class', 'flex justify-center img-responsive')
+randomDogPic.setAttribute('id', 'randomPic')
 randomDogPic.src = data.message;
 dogPic.appendChild(randomDogPic);
 }) 
@@ -72,6 +74,8 @@ fetch (`https://api.thecatapi.com/v1/images/search?limit=20&page=${randomPage}&a
 .then (function (data) {
     console.log(data)
 var randomCatPic = document.createElement('img');
+randomCatPic.setAttribute('class','flex justify-center img-responsive');
+randomCatPic.setAttribute('id', 'randomPic');
 randomCatPic.src = data[randomAry].url;
 catPic.appendChild(randomCatPic);
 });
@@ -188,6 +192,7 @@ finalResults.appendChild(petProfilePic);
 var petDetails = document.createElement('p');
 petDetails.textContent = data.animals[0].description;
 petDetails.setAttribute = ('class', 'mt-3')
+petDetails.setAttribute = ('id', "infoText")
 finalResults.appendChild(petDetails);
 
 /*Link to Pet's page */
