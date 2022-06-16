@@ -115,6 +115,16 @@ li {
     margin-bottom: 3px;  
 }
 
+#finalResults {
+    text-align: center;
+}
+
+#randomPic {
+    display: block;
+    margin: 3px auto;
+    border: solid 7px orange;
+}
+
 #restart {
     width: 15%;
     display: block;
@@ -123,3 +133,4 @@ li {
     margin-top: 3px;
     margin-bottom: 3px;
 }
+
