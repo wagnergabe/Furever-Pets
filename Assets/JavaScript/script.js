@@ -24,6 +24,9 @@ var results = document.querySelector('.results');
 var finalResults = document.querySelector('.finalResults');
 var petChoices = [];
 
+var dogPic = document.querySelector('#randomDog');
+var catPic = document.querySelector('#randomCat');
+
 
 // /*Get New Token */
 // NOTE: Run app once with this, and then comment it out. Creates a token each time quiz is submitted. working on fixing it
@@ -41,7 +44,37 @@ var petChoices = [];
             token = data.access_token;
    })
 
-   
+
+
+// Random Dog Pic //
+fetch ('https://dog.ceo/api/breeds/image/random')
+.then(function(response) {
+    return response.json();
+})
+.then (function (data) {
+    console.log(data)
+
+var randomDogPic = document.createElement('img');
+randomDogPic.src = data.message;
+dogPic.appendChild(randomDogPic);
+}) 
+
+// Random Cat pic //
+
+var randomPage = Math.floor(Math.random() * 100);
+var randomAry = Math.floor(Math.random() * 20);
+
+
+fetch (`https://api.thecatapi.com/v1/images/search?limit=20&page=${randomPage}&api_key=a2ec132c-483a-41d0-a871-b41aeaecf81b`) 
+.then(function(response) {
+    return response.json();
+})
+.then (function (data) {
+    console.log(data)
+var randomCatPic = document.createElement('img');
+randomCatPic.src = data[randomAry].url;
+catPic.appendChild(randomCatPic);
+});
 
 //---- Clear local storage when restarting quiz---//
 restart.addEventListener("click", function() {
@@ -54,6 +87,8 @@ startQuiz.addEventListener("click", function () {
     localStorage.clear();
     mainPage.style.display = "none";
     q1.style.display = "block";
+    dogPic.style.display = "none";
+    catPic.style.display = "none";
    
 })
 
@@ -146,8 +181,6 @@ petProfilePic.src = data.animals[0].primary_photo_cropped.small};
 finalResults.appendChild(petProfilePic);
 
 /*Pet description*/
-/*Note: Desciption is allowed so many characters*/
-/*Note: Webpage description div class = "u-vr4x", may be able to replace API description with website's*/
 var petDetails = document.createElement('p');
 petDetails.textContent = data.animals[0].description;
 finalResults.appendChild(petDetails);
