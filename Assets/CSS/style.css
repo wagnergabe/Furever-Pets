@@ -12,9 +12,18 @@ body {
     display: block;
 }
 
-a {
-    text-decoration: none;
+#FureverTitle, #petName, #adoptMe-button {
+    font-family: "Fredoka One";
 }
+
+#footer-text {
+    font-family: "Fredoka One";
+}
+
+dog-logo path {
+    fill: #fff;
+}
+
 
 li {
     text-decoration: none;
@@ -22,15 +31,17 @@ li {
 }
 
 .jumbotron {
-    background-image: url(../images/stock\ photo.jpg);
+    background-image: url(../images/stock-photo.jpg);
     background-size:0%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
-    background-position: center 50%;
+    background-position: center 45%;
 
 }
+
+
 
 .quiz {
     width: 80%;
@@ -39,18 +50,29 @@ li {
     border: 3px black;
 }
 
+
 .quiz h2 {
     margin: 8px;
     padding-top: 10px;
+}
+
+.answer1 li {
+    list-style-image: url('../Images/paw-solid.svg');
+}
+.answer2 li {
+    list-style-image: url('../Images/paw-solid.svg');
+}
+.answer3 li {
+    list-style-image: url('../Images/paw-solid.svg');
+}
+.answer4 li {
+    list-style-image: url('../Images/paw-solid.svg');
 }
 
 .quiz li {
     margin: 10px;
 }
 
-.quiz li:hover {
-background: orange;
-}
 
 /*-----Question Displays-----*/
 
@@ -75,3 +97,65 @@ background: orange;
 .results {
     display: none;
 } 
+
+#finalResults {
+    text-align: center;
+}
+
+#adoptMe-button {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#pfp {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;  
+}
+
+#infoText {
+    text-align: center;
+    border: 3px solid green;
+}
+
+
+#randomPic {
+    position: relative;
+    display: inline-block;
+    margin: 3px auto;
+    border: solid 7px orange;
+    height: 200px;
+    width: 300px;
+    align-items: center;
+}
+
+#restart {
+    width: 15%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.dogpic {
+    border: solid 7px orange;
+    min-height: 315px;
+    min-width: 415px;
+    max-height: 325px;
+    max-width: 425px;
+}
+
+.catpic {
+    border: solid 7px orange;
+    min-height: 315px;
+    min-width: 415px;
+    max-height: 325px;
+    max-width: 425px;
+}

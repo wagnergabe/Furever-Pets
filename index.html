@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,116 +11,123 @@
     <!--Icons-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 
 </head>
 <title>Furever Pets</title>
 </head>
 
-<body>
-    <div class="container mx-auto">
+<body> 
+    <div class="container">
         <header>
-            <button id="reset" class="block w-100">
-                <div class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded">
-                    <h1
-                        class="text-white text-center text-5xl p-4 shadow-xl hover:bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600">
-                        Fur-Ever Pet Adoptions</h1>
-                </div>
-            </button>
+            <div class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 rounded">
+            <h1 class="text-white text-center text-5xl p-4" id="FureverTitle"><a class="hover:text-white" href="index.html">Furever Pets</a></h1>
+            <div class="flex justify-center pb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path fill="#fff" d="M332.7 19.85C334.6 8.395 344.5 0 356.1 0C363.6 0 370.6 3.52 375.1 9.502L392 32H444.1C456.8 32 469.1 37.06 478.1 46.06L496 64H552C565.3 64 576 74.75 576 88V112C576 156.2 540.2 192 496 192H426.7L421.6 222.5L309.6 158.5L332.7 19.85zM448 64C439.2 64 432 71.16 432 80C432 88.84 439.2 96 448 96C456.8 96 464 88.84 464 80C464 71.16 456.8 64 448 64zM416 256.1V480C416 497.7 401.7 512 384 512H352C334.3 512 320 497.7 320 480V364.8C295.1 377.1 268.8 384 240 384C211.2 384 184 377.1 160 364.8V480C160 497.7 145.7 512 128 512H96C78.33 512 64 497.7 64 480V249.8C35.23 238.9 12.64 214.5 4.836 183.3L.9558 167.8C-3.331 150.6 7.094 133.2 24.24 128.1C41.38 124.7 58.76 135.1 63.05 152.2L66.93 167.8C70.49 182 83.29 191.1 97.97 191.1H303.8L416 256.1z"/></svg>
+            </div>
+            </div>
+            <div id="nav" class="text-white rounded bg-amber-500 grid grid-cols-3 text-lg text-center">
 
-            <div id="nav" class="text-white rounded bg-amber-500 grid grid-cols-3 text-lg text-center shadow-xl">
-                <div class="hover:bg-amber-400">Link 1</div>
-                <div class="hover:bg-amber-400">Link 2</div>
-                <div class="hover:bg-amber-400">Link 3</div>
+                <div>
+                    <a href="Assets/Pages/Dogs.html" class="hover:bg-amber-400 hover:cursor-pointer">Dogs</a>
+                </div>
+                <div>
+                    <a href="Assets/Pages/Cats.html"class="hover:bg-amber-400 hover:cursor-pointer">Cats</a>
+                </div>
+                <div> 
+                    <a href="Assets/Pages/About_us.html" class="hover:bg-amber-400 hover:cursor-pointer">About Us</a>
+                </div>
             </div>
         </header>
-
-        <section class="jumbotron bg-accent-dark bg-cover border-1 shadow-xl" id="mainPage">
-            <div class="hero grid grid-cols-2">
+        <section class="jumbotron bg-accent-dark bg-cover" id = "mainPage">
+            
+            <div class="hero grid grid-cols-2" >
                 <div id="text" class="text-black text-center p-4">
-                    <h2 class="text-3xl font-medium border-b border-amber-500">Looking for a new furry friend?</h2>
-                    <p class="text-2xl">Take our quiz to find your purr-fect match.</p>
-                    <button id="startQuiz"
-                        class="mt-8 rounded-full text-lg bg-amber-200 hover:bg-amber-500 hover:text-white px-2 py-1">Click
-                        For Quiz</button>
+                <h2 class="text-3xl font-medium">Looking for a new furry friend?</h2>
+                <p class="text-2xl">Take our quiz to find your purr-fect match.</p>
 
-                </div>
+                <button id="startQuiz" class="mt-8 rounded-full text-lg bg-amber-500 text-white hover:animate-bounce hover:bg-amber-400 hover:ring hover:ring-amber-500 hover:text-white px-2 py-1">Click For Quiz</button>
             </div>
-            <div class="hero grid grid-cols-2">
-                <div id="text" class="text-black text-center p-4">
-                    <p class="text-xl">We've got the solution! Take a quick, easy quiz and get matched to a
-                        pet tailored to your answers. All pets are up for adoption, ready to be rehomed into your loving
-                        arms.
-                        Click the button above, answer just a few questions, and check out your results. If, for some
-                        reason,
-                        you don't like your match? Simply take the quiz again and check out the next match!</p>
-                </div>
         </section>
-
+          
         <section class="quiz">
 
+            <section class = "randomPics row text-center">
+                <div id = "randomDog" class = "col-sm-6"></div>
+                <div id = "randomCat" class = "col-sm-6"></div>
+            </section>
+            
             <div id="questionOne">
-                <h2 class="text-2xl"><Strong>What Pet Are You Hoping To Adopt?</Strong></h2>
-                <ul class="answer1 text-lg">
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5"> Dog </li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5"> Cat </li>
-                </ul>
+                <h2 class="text-2xl font-bold">What pet are you hoping to adopt?</h2>
+                    <ul class = "answer1 text-lg hover:cursor-pointer w-1/6 px-2 py-1 text-center">
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Dog</li>
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Cat</li>
+                    </ul>
             </div>
-
-            <div id="questionTwo">
-                <h2 class="text-2xl"><Strong>How Old?</Strong></h2>
-                <ul class="answer2 text-lg">
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Baby</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Young</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Adult</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Senior</li>
-                </ul>
+        
+            <div id = "questionTwo">
+                <h2 class="text-2xl font-bold">How old?</h2>
+                    <ul class="answer2 text-lg text-black hover:cursor-pointer w-1/6 px-2 py-1 text-center">
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Baby</li>
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Young</li>
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Adult</li>
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Senior</li>
+                    </ul>
             </div>
-
+        
             <div id="questionThree">
-                <h2 class="text-2xl"><strong>What Size?</strong></h2>
-                <ul class="answer3 text-lg">
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Small</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Medium</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Large</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Extra Large</li>
-                </ul>
+                <h2 class = "text-2xl font-bold">What size?</h2>
+                    <ul class="answer3 text-lg hover:cursor-pointer w-1/6 px-2 py-1 text-center">
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Small</li>
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Medium</li>
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Large</li>
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">xlarge</li>
+                    </ul>
             </div>
-
+    
             <div id="questionFour">
-                <h2 class="text-2xl"><strong>What Gender?</strong></h2>
-                <ul class="answer4 text-lg">
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Male</li>
-                    <li><img src="assets/Images/paw-solid.svg" class="inline-block w-5 h-5">Female</li>
-                </ul>
+                <h2 class = "text-2xl font-bold">What gender?</h2>
+                    <ul class="answer4 text-lg hover:cursor-pointer w-1/6 px-2 py-1 text-center">
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Male</li>
+                        <li class="hover:bg-amber-500 hover:text-white hover:rounded">Female</li>
+                    </ul>
             </div>
-    </div>
-
-    <div class="results">
-        <h2>Your Choices:</h2>
-        <p>Your Pet:</p>
-
-        <div class="finalResults"></div>
-
-        <button id="reset"
-            class="mt-8 rounded-full text-lg bg-amber-200 hover:bg-amber-500 hover:text-white px-2 py-1">Start
-            Over</button>
-
-
         </section>
+    
+        <div id="results" class="card place-content-center">
+            <div class="card w-full text-amber rounded">
+                <!-- <h2 class="text-2xl" id="quiz-choice">Your Choices:</h2>
+                <p id="quiz-choice">Your Pet:</p>
+                     -->
+                <div id= "finalResults" class="">
 
+                </div>
+<!--             
+                <a id ="reset"
+                class="mt-8 rounded text-lg bg-amber-500 hover:text-white px-2 py-1" href="index.html">Start Over</a>
+       -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-500 rounded">
+                <p class="text-lg text-white text-center pb-2" id="footer-text">Made By Pet Lovers</p>
+                <div class="flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path fill="#fff" d="M332.7 19.85C334.6 8.395 344.5 0 356.1 0C363.6 0 370.6 3.52 375.1 9.502L392 32H444.1C456.8 32 469.1 37.06 478.1 46.06L496 64H552C565.3 64 576 74.75 576 88V112C576 156.2 540.2 192 496 192H426.7L421.6 222.5L309.6 158.5L332.7 19.85zM448 64C439.2 64 432 71.16 432 80C432 88.84 439.2 96 448 96C456.8 96 464 88.84 464 80C464 71.16 456.8 64 448 64zM416 256.1V480C416 497.7 401.7 512 384 512H352C334.3 512 320 497.7 320 480V364.8C295.1 377.1 268.8 384 240 384C211.2 384 184 377.1 160 364.8V480C160 497.7 145.7 512 128 512H96C78.33 512 64 497.7 64 480V249.8C35.23 238.9 12.64 214.5 4.836 183.3L.9558 167.8C-3.331 150.6 7.094 133.2 24.24 128.1C41.38 124.7 58.76 135.1 63.05 152.2L66.93 167.8C70.49 182 83.29 191.1 97.97 191.1H303.8L416 256.1z"/></svg>
+                </div>
+                    <p class="text-sm text-white text-center pt-2" id="footer-text">Gabriel • Farhan • Larry • Shane • Zee</p>
+            </div>
+        </footer>
     </div>
 
-    <footer>
-        <div class="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 rounded">
-            <h4 class="text-white text-sm p-4 shadow-xl">
-                Fur-Ever Pet Adoptions &copy; Group 1: Shane Dinh, Zee Virola, Farhan Abdullahi', Larry Sorto,
-                Gabriel Wagner 2022</h4>
-        </div>
-    </footer>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!--JQuery-->
     <script src="./Assets/JavaScript/script.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script-->
+
 
 </body>
 
