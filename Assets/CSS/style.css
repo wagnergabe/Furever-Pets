@@ -31,7 +31,7 @@ li {
 }
 
 .jumbotron {
-    background-image: url(../images/stock-photo.jpg);
+    background-image: url("../images/stock-photo.jpg");
     background-size:0%;
     display: flex;
     justify-content: center;
@@ -144,18 +144,3 @@ li {
     margin-bottom: 3px;
 }
 
-.dogpic {
-    border: solid 7px orange;
-    min-height: 315px;
-    min-width: 415px;
-    max-height: 325px;
-    max-width: 425px;
-}
-
-.catpic {
-    border: solid 7px orange;
-    min-height: 315px;
-    min-width: 415px;
-    max-height: 325px;
-    max-width: 425px;
-}
