@@ -13,21 +13,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-
-
-    <!--<style>
-        .Gallery {
-            display: grid;
-            grid-template-columns: 33% 33% 33%;
-            grid-template-rows: 33% 33% 33%;
-            grid-gap: 15px;
-        }
-
-        .Gallery img {
-            width: 600px;
-            height: 400px;
-        }
-    </style>-->
 </head>
 
 <title>Furever Pets</title>
@@ -65,46 +50,367 @@
 
     <section>
         <h1 class="text-3xl text-black text-center p-4"><strong>Dogs</strong></h1>
-        <p class="text-2xl text-center p-4">Learn more about your Furever Pet</p>
+        <p class="text-2xl text-center p-4">Click on an image to learn more about your Furever Pet</p>
 
-        <div class="Gallery grid grid-rows-3 grid-flow-col gap-3">
+        <div class="grid grid-rows-3 grid-flow-col gap-3 place-content-center">
+<!--Beagle Button-->            
             <div class="col-sm-9">
                 <h4>Beagle</h4>
-                <img class="dogpic" src="./images/beagle.jpg">
+                <button id="beaBtn">
+                    <img class="dogpic" src="./images/beagle.jpg">
+                </button>
             </div>
+<!--Golden Retriever Button-->
             <div class="col-sm-9">
                 <h4>Golden Retriever</h4>
-                <img class="dogpic" src="./images/Golden Retriever.jpg">
+                <button id="golBtn">
+                    <img class="dogpic" src="./images/Golden Retriever.jpg">
+                </button>
             </div>
+<!--Boxer Button-->
             <div class="col-sm-9">
                 <h4>Boxer</h4>
-                <img class="dogpic" src="./images/boxer.jpg">
+                <button id="boxBtn">
+                    <img class="dogpic" src="./images/boxer.jpg">
+                </button>
             </div>
+<!--Husky Button-->
             <div class="col-sm-9">
                 <h4>Husky</h4>
-                <img class="dogpic" src="./images/husky.jpeg">
+                <button id="husBtn">
+                    <img class="dogpic" src="./images/husky.jpeg">
+                </button>
             </div>
+<!--Labrador Button-->
             <div class="col-sm-9">
                 <h4>Labrador Retriever</h4>
-                <img class="dogpic" src="./images/Labrador.webp">
+                <button id="labBtn">
+                    <img class="dogpic" src="./images/Labrador.webp">
+                </button>
             </div>
+<!--Englsih Button-->
             <div class="col-sm-9">
                 <h4>English Bulldog</h4>
-                <img class="dogpic" src="./images/Bulldog.jpg">
+                <button id="bullBtn">
+                    <img class="dogpic" src="./images/Bulldog.jpg">
+                </button>
             </div>
+<!--Rottweiler Button-->
             <div class="col-sm-9">
                 <h4>Rottweiler</h4>
-                <img class="dogpic" src="./images/Rottweiler.jpg">
+                <button id="rottBtn">   
+                    <img class="dogpic" src="./images/Rottweiler.jpg">
+                </button>
             </div>
+<!--Poodle Button-->
             <div class="col-sm-9">
                 <h4>Poodle</h4>
-                <img class="dogpic" src="./images/poodle.jpg">
+                <button id="poodBtn">
+                    <img class="dogpic" src="./images/poodle.jpg">
+                </button>
             </div>
+<!--Pug Button-->
             <div class="col-sm-9">
                 <h4>Pug</h4>
-                <img class="dogpic" src="./images/pug.jpg">
+                <button id="pugBtn">
+                    <img class="dogpic" src="./images/pug.jpg">
+                </button>
             </div>
+        
+
+    <!--Beagle modal-->
+            <div>
+                <div id="beaOverlay" class="bg-black bg-opacity-30 absolute inset-0 hidden justify-center items-center">
+                    <div class="bg-white max-w-lg h-auto py-2 px-2 rounded shadow-xl">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">Beagle</h3>
+                            <svg id="closebea" class="w-6 h-6 cursor-pointer p-1 hover:bg-gray-200 rounded-full" fill="none" stroke="currentColor" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum suscipit voluptate perferendis sit, ex totam sequi accusamus eius provident unde itaque non cumque dignissimos. Inventore quidem possimus nulla error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, vero! Magnam est consectetur odit exercitationem incidunt. Dolore voluptatum expedita quas, debitis temporibus commodi assumenda laboriosam officia non vitae, perspiciatis similique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+    <!--Golden Retriever modal-->       
+            <div>
+                <div id="golOverlay"class="bg-black bg-opacity-30 absolute inset-0 hidden justify-center items-center">
+                    <div class="bg-white max-w-lg h-auto py-2 px-2 rounded shadow-xl">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">Golden Retriever</h3>
+                            <svg id="closegol" class="w-6 h-6 cursor-pointer p-1 hover:bg-gray-200 rounded-full" fill="none" stroke="currentColor" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum suscipit voluptate perferendis sit, ex totam sequi accusamus eius provident unde itaque non cumque dignissimos. Inventore quidem possimus nulla error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, vero! Magnam est consectetur odit exercitationem incidunt. Dolore voluptatum expedita quas, debitis temporibus commodi assumenda laboriosam officia non vitae, perspiciatis similique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+<!--boxer modal-->
+            <div>
+                <div id="boxOverlay"class="bg-black bg-opacity-30 absolute inset-0 hidden justify-center items-center">
+                    <div class="bg-white max-w-lg h-auto py-2 px-2 rounded shadow-xl">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">Boxer</h3>
+                            <svg id="closebox" class="w-6 h-6 cursor-pointer p-1 hover:bg-gray-200 rounded-full" fill="none" stroke="currentColor" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum suscipit voluptate perferendis sit, ex totam sequi accusamus eius provident unde itaque non cumque dignissimos. Inventore quidem possimus nulla error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, vero! Magnam est consectetur odit exercitationem incidunt. Dolore voluptatum expedita quas, debitis temporibus commodi assumenda laboriosam officia non vitae, perspiciatis similique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+    <!--Husky modal-->  
+             <div>
+                <div id="husOverlay"class="bg-black bg-opacity-30 absolute inset-0 hidden justify-center items-center">
+                    <div class="bg-white max-w-lg h-auto py-2 px-2 rounded shadow-xl">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">Husky</h3>
+                            <svg id="closehus" class="w-6 h-6 cursor-pointer p-1 hover:bg-gray-200 rounded-full" fill="none" stroke="currentColor" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum suscipit voluptate perferendis sit, ex totam sequi accusamus eius provident unde itaque non cumque dignissimos. Inventore quidem possimus nulla error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, vero! Magnam est consectetur odit exercitationem incidunt. Dolore voluptatum expedita quas, debitis temporibus commodi assumenda laboriosam officia non vitae, perspiciatis similique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+    <!--Labrador Retriever modal-->
+            <div>
+                <div id="labOverlay"class="bg-black bg-opacity-30 absolute inset-0 hidden justify-center items-center">
+                    <div class="bg-white max-w-lg h-auto py-2 px-2 rounded shadow-xl">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">Labrador Retriever</h3>
+                            <svg id="closelab" class="w-6 h-6 cursor-pointer p-1 hover:bg-gray-200 rounded-full" fill="none" stroke="currentColor" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum suscipit voluptate perferendis sit, ex totam sequi accusamus eius provident unde itaque non cumque dignissimos. Inventore quidem possimus nulla error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, vero! Magnam est consectetur odit exercitationem incidunt. Dolore voluptatum expedita quas, debitis temporibus commodi assumenda laboriosam officia non vitae, perspiciatis similique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+    <!--English Bulldog modal-->
+           <div>
+                <div id="bullOverlay"class="bg-black bg-opacity-30 absolute inset-0 hidden justify-center items-center">
+                    <div class="bg-white max-w-lg h-auto py-2 px-2 rounded shadow-xl">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">English Bulldog</h3>
+                            <svg id="closebull" class="w-6 h-6 cursor-pointer p-1 hover:bg-gray-200 rounded-full" fill="none" stroke="currentColor" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum suscipit voluptate perferendis sit, ex totam sequi accusamus eius provident unde itaque non cumque dignissimos. Inventore quidem possimus nulla error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, vero! Magnam est consectetur odit exercitationem incidunt. Dolore voluptatum expedita quas, debitis temporibus commodi assumenda laboriosam officia non vitae, perspiciatis similique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+    <!--Rottweiler modal-->
+           <div>
+                <div id="rottOverlay"class="bg-black bg-opacity-30 absolute inset-0 hidden justify-center items-center">
+                    <div class="bg-white max-w-lg h-auto py-2 px-2 rounded shadow-xl">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">Rottweiler</h3>
+                            <svg id="closerott" class="w-6 h-6 cursor-pointer p-1 hover:bg-gray-200 rounded-full" fill="none" stroke="currentColor" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum suscipit voluptate perferendis sit, ex totam sequi accusamus eius provident unde itaque non cumque dignissimos. Inventore quidem possimus nulla error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, vero! Magnam est consectetur odit exercitationem incidunt. Dolore voluptatum expedita quas, debitis temporibus commodi assumenda laboriosam officia non vitae, perspiciatis similique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+    <!--Poodle modal-->
+          <div>
+                <div id="poodOverlay"class="bg-black bg-opacity-30 absolute inset-0 hidden justify-center items-center">
+                    <div class="bg-white max-w-lg h-auto py-2 px-2 rounded shadow-xl">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">Poodle</h3>
+                            <svg id="closepood" class="w-6 h-6 cursor-pointer p-1 hover:bg-gray-200 rounded-full" fill="none" stroke="currentColor" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum suscipit voluptate perferendis sit, ex totam sequi accusamus eius provident unde itaque non cumque dignissimos. Inventore quidem possimus nulla error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, vero! Magnam est consectetur odit exercitationem incidunt. Dolore voluptatum expedita quas, debitis temporibus commodi assumenda laboriosam officia non vitae, perspiciatis similique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+    <!--Pug modal-->
+            <div>
+                <div id="pugOverlay"class="bg-black bg-opacity-30 absolute inset-0 hidden justify-center items-center">
+                    <div class="bg-white max-w-lg h-auto py-2 px-2 rounded shadow-xl">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-lg font-bold">Pug</h3>
+                            <svg id="closepug" class="w-6 h-6 cursor-pointer p-1 hover:bg-gray-200 rounded-full" fill="none" stroke="currentColor" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="mt-2">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A harum suscipit voluptate perferendis sit, ex totam sequi accusamus eius provident unde itaque non cumque dignissimos. Inventore quidem possimus nulla error! Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, vero! Magnam est consectetur odit exercitationem incidunt. Dolore voluptatum expedita quas, debitis temporibus commodi assumenda laboriosam officia non vitae, perspiciatis similique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
+
+
+
+        <script>
+            window.addEventListener('DOMContentLoaded', () =>{
+                const beaOverlay = document.querySelector('#beaOverlay')
+                const golOverlay = document.querySelector('#golOverlay')
+                const boxOverlay = document.querySelector('#boxOverlay')
+                const husOverlay = document.querySelector('#husOverlay')
+                const labOverlay = document.querySelector('#labOverlay')
+                const bullOverlay = document.querySelector('#bullOverlay')
+                const rottOverlay = document.querySelector('#rottOverlay')
+                const poodOverlay = document.querySelector('#poodOverlay')
+                const pugOverlay = document.querySelector('#pugOverlay')
+                
+
+                const beaBtn = document.querySelector('#beaBtn')    
+                const golBtn = document.querySelector('#golBtn')    
+                const boxBtn = document.querySelector('#boxBtn')    
+                const husBtn = document.querySelector('#husBtn')    
+                const labBtn = document.querySelector('#labBtn')    
+                const bullBtn = document.querySelector('#bullBtn')    
+                const rottBtn = document.querySelector('#rottBtn')    
+                const poodBtn = document.querySelector('#poodBtn')    
+                const pugBtn = document.querySelector('#pugBtn')   
+                
+                const closebea = document.querySelector('#closebea')
+                const closegol = document.querySelector('#closegol')
+                const closebox = document.querySelector('#closebox')
+                const closehus = document.querySelector('#closehus')
+                const closelab = document.querySelector('#closelab')
+                const closebull = document.querySelector('#closebull')
+                const rottclose = document.querySelector('#rottclose')
+                const closepood = document.querySelector('#closepood')
+                const pugclose = document.querySelector('#pugclose')
+            
+            
+                beaBtn.addEventListener('click',() =>{
+                    beaOverlay.classList.toggle('hidden')
+                    Overlay.classList.toggle('flex')
+                })
+                closebea.addEventListener('click',() =>{
+                    beaOverlay.classList.toggle('flex')
+                    beaOverlay.classList.toggle('hidden')
+                })
+
+                golBtn.addEventListener('click',() =>{
+                    golOverlay.classList.toggle('hidden')
+                    golOverlay.classList.toggle('flex')
+                })
+                closegol.addEventListener('click',() =>{
+                    golOverlay.classList.toggle('flex')
+                    golOverlay.classList.toggle('hidden')
+                })
+
+                boxBtn.addEventListener('click',() =>{
+                    boxOverlay.classList.toggle('hidden')
+                    boxOverlay.classList.toggle('flex')
+                })
+                closebox.addEventListener('click',() =>{
+                    boxOverlay.classList.toggle('flex')
+                    boxOverlay.classList.toggle('hidden')
+                })
+
+                husBtn.addEventListener('click',() =>{
+                    husOverlay.classList.toggle('hidden')
+                    husOverlay.classList.toggle('flex')
+                })
+                closehus.addEventListener('click',() =>{
+                    husOverlay.classList.toggle('flex')
+                    husOverlay.classList.toggle('hidden')
+                })
+
+                labBtn.addEventListener('click',() =>{
+                    labOverlay.classList.toggle('hidden')
+                    labOverlay.classList.toggle('flex')
+                })
+                closelab.addEventListener('click',() =>{
+                    labOverlay.classList.toggle('flex')
+                    labOverlay.classList.toggle('hidden')
+                })
+
+                bullBtn.addEventListener('click',() =>{
+                    bullOverlay.classList.toggle('hidden')
+                    bullOverlay.classList.toggle('flex')
+                })
+                closebull.addEventListener('click',() =>{
+                    bullOverlay.classList.toggle('flex')
+                    bullOverlay.classList.toggle('hidden')
+                })
+
+                rottBtn.addEventListener('click',() =>{
+                    rottOverlay.classList.toggle('hidden')
+                    rottOverlay.classList.toggle('flex')
+                })
+                closerott.addEventListener('click',() =>{
+                    rottOverlay.classList.toggle('flex')
+                    rottOverlay.classList.toggle('hidden')
+                })
+
+                poodBtn.addEventListener('click',() =>{
+                    poodOverlay.classList.toggle('hidden')
+                    poodOverlay.classList.toggle('flex')
+                })
+                closepood.addEventListener('click',() =>{
+                    poodOverlay.classList.toggle('flex')
+                    poodOverlay.classList.toggle('hidden')
+                })
+
+                pugBtn.addEventListener('click',() =>{
+                    pugOverlay.classList.toggle('hidden')
+                    pugOverlay.classList.toggle('flex')
+                })
+                closepug.addEventListener('click',() =>{
+                    pugOverlay.classList.toggle('flex')
+                    pugOverlay.classList.toggle('hidden')
+                })
+
+                
+            
+            
+            
+            });
+
+            
+
+        </script>
+
+
+
 
     </section>
 </body>
