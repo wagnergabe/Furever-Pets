@@ -144,3 +144,18 @@ li {
     margin-bottom: 3px;
 }
 
+.dogpic {
+    border: solid 7px orange;
+    min-height: 415px;
+    min-width: 515px;
+    max-height: 415px;
+    max-width: 515px;
+}
+
+.catpic {
+    border: solid 7px orange;
+    min-height: 415px;
+    min-width: 515px;
+    max-height: 415px;
+    max-width: 515px;
+}
